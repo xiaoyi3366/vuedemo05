@@ -4,6 +4,7 @@
   <div id="app"> 
       <router-link to="/navigation">navigation</router-link>
       <router-link to="/problem">problem</router-link>
+      <router-link to="/user/useradd">user</router-link>
       <hr>
       <router-view></router-view>
     

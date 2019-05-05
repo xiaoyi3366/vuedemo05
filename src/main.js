@@ -1,24 +1,11 @@
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 import Vue from 'vue';
 import App from './App.vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-
-import Navigation from './components/Navigation.vue';
-import Problem from './components/Problem.vue';
-import Content from './components/Content.vue';
-import Pcontent from './components/Pcontent.vue';
-const routes = [
-  {path:'/navigation',component:Navigation},
-  {path:'/problem',component:Problem},
-  {path:'/content/:aid',component:Content},
-  {path:'/pcontent',component:Pcontent},
-  {path: '*',redirect:'/navigation'}
-]
-
-const router = new VueRouter({
-  routes
-})
-
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+import router from './router/router.js';
 
 //4、挂载路由
 

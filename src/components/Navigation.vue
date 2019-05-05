@@ -5,6 +5,10 @@
                 <router-link :to="'/pcontent?id='+key">{{item}}</router-link>
             </li>
         </ul>
+        <hr>
+        <button >js跳转到problem</button>
+        <br><br>
+        <el-button type="primary" @click="toProblem()">主要按钮</el-button>
     </div>
 </template>
 
@@ -13,6 +17,12 @@
         data(){
             return{
                 list:['111','aaa','bbbb']
+            }
+        },
+        methods:{
+            toProblem(){
+                this.$router.push({path:'problem'});
+                // this.$router.push({name:'problem'});
             }
         }
     }
