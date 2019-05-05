@@ -9,20 +9,31 @@
         <button >js跳转到problem</button>
         <br><br>
         <el-button type="primary" @click="toProblem()">主要按钮</el-button>
+        <br><br>
+        {{this.$store.state.count}}
+        <el-button @click="incCount()">增加数量</el-button>
     </div>
 </template>
 
 <script>
+    //1.引入store
+    import store from '../vuex/store.js';
+    //2.注册
     export default {
         data(){
             return{
                 list:['111','aaa','bbbb']
             }
         },
+        store,
         methods:{
             toProblem(){
                 this.$router.push({path:'problem'});
                 // this.$router.push({name:'problem'});
+            },
+            incCount(){
+                //改变vuex store里面的数据
+                this.$store.commit('incCount');
             }
         }
     }
