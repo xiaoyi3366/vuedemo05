@@ -10,7 +10,7 @@
         <br><br>
         <el-button type="primary" @click="toProblem()">主要按钮</el-button>
         <br><br>
-        {{this.$store.state.count}}
+        {{this.$store.state.count}}-----{{this.$store.getters.computedCount}}
         <el-button @click="incCount()">增加数量</el-button>
     </div>
 </template>
@@ -32,7 +32,7 @@
                 // this.$router.push({name:'problem'});
             },
             incCount(){
-                //改变vuex store里面的数据
+                //触发 mutations 改变vuex store里面的数据
                 this.$store.commit('incCount');
             }
         }

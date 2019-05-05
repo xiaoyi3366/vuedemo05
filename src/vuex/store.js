@@ -11,11 +11,20 @@ var state={
 var mutations = {
     incCount(){
         ++state.count;
+    },
+    addList(state,data){
+        state.list = data;
+    }
+}
+var getters ={
+    computedCount(state){
+        return state.count*2;
     }
 }
 /**实例化Vuex.Store */
 const store = new Vuex.Store({
     state,
-    mutations
+    mutations,
+    getters
 }) 
 export default store;
